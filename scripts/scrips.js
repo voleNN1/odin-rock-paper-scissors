@@ -74,10 +74,23 @@ function playRound() {
     }
 }
 
+function playGame() {
+
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
+
+    if (humanScore > computerScore) {
+        console.log("You Win! Congratulations!");
+    }
+    else if (computerScore > humanScore) {
+        console.log("You Lose! So sorry!");
+    }
+} 
+    
 let humanScore = 0;
 let computerScore= 0;
 
-playRound();
-
+playGame();
 
 
