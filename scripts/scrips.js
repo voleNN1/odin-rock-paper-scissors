@@ -53,32 +53,28 @@ btnScissors.addEventListener("click", () => {
     playRound("scissors");
 })
 
+let humanScore = 0;
+let computerScore= 0;
 
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
     const pcScoreOutput = document.querySelector("#pcResultsOutput");
     const humanScoreOutput = document.querySelector("#humanResultsOutput");
-
+    
     console.log(humanChoice);
     console.log(computerChoice);
 
     if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore++
-        console.log("You Win! Rock beats Scissors!")
-        console.log("Your score is now " + humanScore + "!");
-        console.log("The computer score is " + computerScore + "!");
+        humanScoreOutput.textContent = humanScore;
     }
     else if (humanChoice == "paper" && computerChoice == "rock") {
         humanScore++
-        console.log("You Win! Paper beats Rock!");
-        console.log("Your score is now " + humanScore + "!");
-        console.log("The computer score is " + computerScore + "!");
+        humanScoreOutput.textContent = humanScore;
     }
     else if (humanChoice == "scissors" && computerChoice == "paper") {
         humanScore++
-        console.log("You Win! Scissors beats Paper!");
-        console.log("Your score is now " + humanScore + "!")
-        console.log("The computer score is " + computerScore + "!");
+        humanScoreOutput.textContent = humanScore;
     }
     else if (humanChoice ===  computerChoice) {
         console.log("It's a tie! " + humanChoice + " and " + computerChoice + " are the same!");
@@ -86,13 +82,32 @@ function playRound(humanChoice) {
     }
     else {
         computerScore++
-        console.log("You lose! " + computerChoice + " beats " + humanChoice + "!");
-        console.log("The Computer score is now " + computerScore + "!");
-        console.log("Your score is " + humanScore + "!");
+        pcScoreOutput.textContent = computerScore;
+    }
+
+    if (humanScore >= 5) {
+        alert("You have Won! Congratulations!");
+
+        humanScore = 0;
+        humanScoreOutput.textContent = humanScore;
+
+        computerScore = 0;
+        pcScoreOutput.textContent = computerScore;
+    }
+    else if (computerScore >= 5) {
+        alert("You have Lost! Please try again!");
+
+        humanScore = 0;
+        humanScoreOutput.textContent = humanScore;
+
+        computerScore = 0;
+        pcScoreOutput.textContent = computerScore;
     }
 }
+
+
+
     
-let humanScore = 0;
-let computerScore= 0;
+
 
 
