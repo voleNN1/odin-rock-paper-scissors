@@ -56,6 +56,8 @@ btnScissors.addEventListener("click", () => {
 
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
+    const pcScoreOutput = document.querySelector("#pcResultsOutput");
+    const humanScoreOutput = document.querySelector("#humanResultsOutput");
 
     console.log(humanChoice);
     console.log(computerChoice);
@@ -92,7 +94,5 @@ function playRound(humanChoice) {
     
 let humanScore = 0;
 let computerScore= 0;
-
-
 
 

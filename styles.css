@@ -2,34 +2,56 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
     background-color: #4f3bb3;
-    max-width: 100%
+    max-width: 100%;
+    border: 10px solid black;
 }
 
-body > div {
+#pageWrapper {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    margin: 20px;
+    border: 5px solid gray;
 }
 
 #introduction {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     background-color: #823f91;
-    border: 3px solid magenta;
+    border-radius: 10px;
     width: 85%;
+    margin: 20px;
+    padding: 15px;
+}
+
+#introduction > h1 {
+    text-decoration: underline;
+}
+
+#introduction > p {
+    text-align: center;
+    max-width: 50%;
 }
 
 #choiceContainer {
     display: flex;
-    border: 5px solid black;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 50px;
     margin-left: 15px;
     margin-right: 15px;
-
+    width: 85%;
 }
 
 #results {
-    
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    padding: 25px;
+    width: 85%;
 }
 
 button {
@@ -39,4 +61,21 @@ button {
     margin: 10px;
     padding: 5px;
     border: 2px solid aqua;
+}
+
+h2, #pcResults > p, #humanResults >p {
+    color: grey;
+    background-color: darkred;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 2px 4px;
+    margin-bottom: 0;
+}
+
+#pcResults > p, #humanResults > p {
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    border-top: none;
 }
